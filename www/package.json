@@ -1,0 +1,22 @@
+{
+  "name": "express_example",
+  "version": "1.0.0",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "jade": "0.28.1",
+    "less-middleware": "^2.0.1",
+    "lsq": "0.0.3",
+    "request": "^2.53.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "devDependencies": {
+    "mocha": "1.15.1"
+  },
+  "port": 3000
+}

@@ -1,0 +1,30 @@
+{
+  "name": "subscribe-mailchimp",
+  "version": "1.0.0",
+  "description": "subscribe a email and info to mailchimp",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "debug": "^2.1.2",
+    "express": "^4.12.2",
+    "mailchimp-api": "^2.0.7",
+    "method-override": "^2.3.1",
+    "morgan": "^1.5.1",
+    "on-finished": "^2.2.0",
+    "lsq": "0.0.3",
+    "request": "^2.53.0",
+    "marked":"^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mailchimp",
+    "microservice"
+  ],
+  "author": "lsqio",
+  "port": 3001,
+  "license": "MIT"
+}

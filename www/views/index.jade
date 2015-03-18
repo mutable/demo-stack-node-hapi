@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  section.container.quotes(id="welcome")
+    .row.emailSection
+        .col-sm-offset-3.col-sm-6
+
+          .text-center
+            h2 Subscribe for updates
+            h4 We send out a short newsletter each month.
+            br
+
+          form.form-horizontal(name='subscribe-form', onsubmit="return false;")
+            .form-group
+              .col-sm-8
+                input.form-control#subscribeEmail(type='email', value='', name='subscribeEmail', placeholder='example: address@email.com', required='required')
+              .col-sm-4
+                button.btn.btn-block(onclick="subscribe()") Subscribe
+
+          .text-center
+            h4#response.text-success
+
+  script.
+    function subscribe(){
+      var responseString = ""
+      xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          document.getElementById("response").innerHTML = responseString;
+        } else {
+
+          if(xmlhttp.responseText){
+            responseString = JSON.parse(xmlhttp.responseText).result
+          }
+
+        }
+      }
+
+      var payload = {
+        email: document.getElementById("subscribeEmail").value,
+        source: "techstars"
+      }
+
+      xmlhttp.open("POST", "/api/v1/subscribe", true);
+      xmlhttp.setRequestHeader("Content-type","application/json");
+      xmlhttp.send(JSON.stringify(payload));
+    }
