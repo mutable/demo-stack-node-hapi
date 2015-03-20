@@ -76,7 +76,7 @@ Go to the config tab and set it with this info
     "mailchimp": {
       "token": "xxx",
       "lists": {
-        "demo": "xxx",
+        "demo": "xxx"
       }
     }
   }
@@ -93,8 +93,5 @@ Resources
 - [Service Discovery and Config](https://github.com/lsqio/lsq)
 - [LSQ.io Docs](https://github.com/lsqio/docs)
 
-
-Node Mirco
----
 
 

@@ -77,7 +77,4 @@ Resources
 - [LSQ.io Docs](https://github.com/lsqio/docs)
 
 
-Node Mirco
----
-
 
