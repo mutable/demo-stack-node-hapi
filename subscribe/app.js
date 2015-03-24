@@ -7,11 +7,13 @@ var express = require('express')
   , methodOverride = require('method-override')
   , log = debug('app:log')
   , error = debug('app:error')
+  , tooBusy = require('toobusy-js')
   , app = express()
   , getReportingInfo = require('./tools/reporting')
   , report = require('./tools').report
   , sendMarkdown = require('./tools').sendMarkdown
 
+  sendMarkdown()
 
   app
   .set('port', process.env.PORT || 3000)
@@ -22,14 +24,18 @@ var express = require('express')
   .use(getReportingInfo(report))
   .use('/api/v1/',require('./api/v1'))
 
-
-
   app.get('/', function(req, res){
     res.send(sendMarkdown())
   })
 
+  app.get('/test', function(req, res) {
+    var i = 0;
+    while (i < 1e9) i++;
+    res.send("I counted to " + i);
+  })
+
   app.get('/health',function(req,res){
-    res.send('ok')
+    res.send(tooBusy.lag()+"")
   })
 
   app.listen(app.get('port'),function(){

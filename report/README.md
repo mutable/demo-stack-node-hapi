@@ -70,4 +70,3 @@ Resources
 - [Service Discovery and Config](https://github.com/lsqio/lsq)
 - [LSQ.io Docs](https://github.com/lsqio/docs)
 
-

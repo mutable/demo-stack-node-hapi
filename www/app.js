@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
+  , tooBusy = require('toobusy-js')
   , request = require('request')
   , lsq = require('lsq')
 
@@ -33,8 +34,8 @@ app.configure('development', function(){
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Home'
-  });
-});
+  })
+})
 
 app.post('/api/v1/subscribe',function(req,res){
   lsq.services.get('subscribe')
@@ -48,9 +49,16 @@ app.post('/api/v1/subscribe',function(req,res){
    })
 })
 
-app.get('/health',function(req,res){
-  res.send('ok')
+app.get('/test', function(req, res) {
+  var i = 0;
+  while (i < 1e9) i++;
+  res.send("I counted to " + i);
 })
+
+app.get('/health',function(req,res){
+  res.send(tooBusy.lag()+"")
+})
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

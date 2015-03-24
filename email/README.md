@@ -14,27 +14,36 @@ APIs
 ### POST: /subscribe/thankyou
 
 Payload:
+
 ```json
+
 {
   "email" : "example@mail.com"
 }
+
 ```
 
 Response Success:
 Http Code 200
+
 ```json
+
 {
   "result":"sent thank you email to example@mail.com"
 }
+
 ```
 
 Response Error:
 Http Code 422
+
 ```json
+
 {
   "err":{error object}
   "result":"Problem with sending email"
 }
+
 ```
 
 Setup
@@ -75,6 +84,4 @@ Resources
 - [Node Micro](https://github.com/lsqio/node-micro)
 - [Service Discovery and Config](https://github.com/lsqio/lsq)
 - [LSQ.io Docs](https://github.com/lsqio/docs)
-
-
 
