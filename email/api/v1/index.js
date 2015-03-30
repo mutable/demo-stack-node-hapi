@@ -23,9 +23,9 @@ api.post('/subscribe/thankyou',function(req,res){
       res.send(422,{err:err,result:"Problem with sending email"})
       return console.error(err)
     }
-    
+
     res.send({result:"sent thank you email to "+req.body.email})
-  
+    
   })
 })
 

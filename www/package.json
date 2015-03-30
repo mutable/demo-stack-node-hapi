@@ -9,6 +9,10 @@
     "jade": "0.28.1",
     "less-middleware": "^2.0.1",
     "lsq": "0.0.3",
+    "marked": "^0.0.3",
+    "method-override": "^2.3.1",
+    "morgan": "^1.5.1",
+    "on-finished": "^2.2.0",
     "request": "^2.53.0",
     "toobusy-js": "^0.4.1"
   },
@@ -18,6 +22,5 @@
   },
   "devDependencies": {
     "mocha": "1.15.1"
-  },
-  "port": 3000
+  }
 }

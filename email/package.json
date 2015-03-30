@@ -26,7 +26,7 @@
     "sendgrid",
     "microservice"
   ],
+  "watch":"api/**/*",
   "author": "lsqio",
-  "port": 3003,
   "license": "MIT"
 }

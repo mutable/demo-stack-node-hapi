@@ -4,26 +4,22 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
   , http = require('http')
   , path = require('path')
-  , tooBusy = require('toobusy-js')
   , request = require('request')
   , lsq = require('lsq')
+  , tools = require('./tools')
 
 
 var app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
+  app.set('views', path.join(__dirname, '/views'));
   app.set('view engine', 'jade');
-  app.use(express.favicon());
-  app.use(require('less-middleware')(__dirname + '/public'));
-  //app.use(express.logger('dev'));
+  app.use(require('less-middleware')(path.join(__dirname, '/public')));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
@@ -31,12 +27,9 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Home'
-  })
-})
-
+app.get('/',tools.homePage)
+app.get('/test',tools.test)
+app.get('/health',tools.healthCheck)
 app.post('/api/v1/subscribe',function(req,res){
   lsq.services.get('subscribe')
     .then(function(service){
@@ -47,16 +40,6 @@ app.post('/api/v1/subscribe',function(req,res){
             res.send(body)
           })
    })
-})
-
-app.get('/test', function(req, res) {
-  var i = 0;
-  while (i < 1e9) i++;
-  res.send("I counted to " + i);
-})
-
-app.get('/health',function(req,res){
-  res.send(tooBusy.lag()+"")
 })
 
 http.createServer(app).listen(app.get('port'), function(){

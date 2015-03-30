@@ -25,6 +25,7 @@ api.post('/demo/subscribe',function(req,res){
         ,{json:req.body}
         , function (error, response, body) {
           if(error) console.error("Can not reach email service")
+          console.log("[Email] ",body)
         })
       })
       
@@ -33,6 +34,7 @@ api.post('/demo/subscribe',function(req,res){
           ,{json:req.body}
           , function (error, response, body) {
             if(error) console.error("Can not reach report service")
+            console.log("[Report] ",body)
           })
         })
 
