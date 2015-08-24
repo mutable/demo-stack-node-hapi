@@ -26,5 +26,8 @@ node_modules
 **/node_modules
 
 # Users Environment Variables
+.consul
+*/.env
+.config.json
 .lock-wscript
 .DS_Store
