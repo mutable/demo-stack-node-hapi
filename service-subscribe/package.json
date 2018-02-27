@@ -1,20 +1,17 @@
 {
-  "name": "report-keenio",
+  "name": "subscribe-mailchimp",
   "version": "1.0.0",
-  "description": "save info to keenio",
+  "description": "subscribe a email and info to mailchimp",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.12.0",
-    "debug": "^2.1.2",
-    "express": "^4.12.2",
-    "keen.io": "^0.1.3",
-    "lsq": "0.0.3",
-    "marked": "^0.0.3",
-    "method-override": "^2.3.1",
-    "morgan": "^1.5.1",
-    "on-finished": "^2.2.0",
-    "request": "^2.53.0",
-    "toobusy-js": "^0.4.1"
+    "@mutable/meta": "^1.3.0",
+    "@sendgrid/mail": "^6.2.1",
+    "hapi": "^17.2.0",
+    "inert": "^5.1.0",
+    "marked": "^0.3.16",
+    "node-fetch": "^2.0.0",
+    "toobusy-js": "^0.5.1",
+    "vision": "^5.3.1"
   },
   "devDependencies": {
     "eslint": "^4.18.1",
@@ -26,7 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "keenio",
+    "mailchimp",
     "microservice"
   ],
   "watch": "api/**/*",

@@ -1,22 +1,19 @@
-var express = require('express')
-  , api = express.Router()
-  , request = require('request')
-  , Keen    = require('keen.io')
-  , lsq = require('lsq')
-  , keenClient
-  , config
+const express = require('express');
+const Keen = require('keen.io');
+const lsq = require('lsq');
 
-lsq.config.get().then(function(c){
-  config = c
-  keenClient  = Keen.configure(c.api.keenio.config)
-})
+const api = express.Router();
+let keenClient = '';
 
-api.post('/add/subscriber/demo',function(req,res){
-  keenClient.addEvent("newSubscriber", req.body, function(err, data) {
-      if (err) console.error("Oh no, an error!",err)
-      
-      res.send({result:"success"})
-    })
-})
+lsq.config.get().then((c) => {
+  keenClient = Keen.configure(c.api.keenio.config);
+});
 
-module.exports = api
+api.post('/add/subscriber/demo', (req, res) => {
+  keenClient.addEvent('newSubscriber', req.body, (err) => {
+    if (err) console.error('Oh no, an error!', err);
+    res.send({ result: 'success' });
+  });
+});
+
+module.exports = api;

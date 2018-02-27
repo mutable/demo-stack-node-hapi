@@ -1,5 +1,0 @@
-{
-    "watch": "app.js",
-    "isStartedWhen": "port",
-    "healthCheck": "/health"
-}
