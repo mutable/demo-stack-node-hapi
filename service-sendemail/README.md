@@ -26,7 +26,7 @@ Http Code 200
 
 ```json
 {
-  "result": "sent thank you email to example@mail.com"
+  "result": "Sent thank you email to example@mail.com"
 }
 ```
 
@@ -35,8 +35,8 @@ Http Code 422
 
 ```json
 {
-  "err": "error message",
-  "result": "Problem with sending email"
+  "result": "Problem with sending email",
+  "err": "error object"
 }
 ```
 

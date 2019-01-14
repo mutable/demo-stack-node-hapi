@@ -1,4 +1,4 @@
-const healthApi = require('../api/health.js');
+const healthApi = require('../api/health');
 
 const healthRoutes = [];
 module.exports = healthRoutes;

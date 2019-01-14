@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const subscribeApi = require('../api/subscribe.js');
+const subscribeApi = require('../api/subscribe');
 
 const subscribeRoutes = Router();
 

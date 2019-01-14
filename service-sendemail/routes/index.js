@@ -1,9 +1,9 @@
 /**
 * Combine all routes into one array
 */
-const homeRoutes = require('./home.routes.js');
-const healthRoutes = require('./health.routes.js');
-const sendEmailRoutes = require('./sendEmail.routes.js');
+const homeRoutes = require('./home');
+const healthRoutes = require('./health');
+const sendEmailRoutes = require('./sendEmail');
 
 module.exports = [
   ...homeRoutes,

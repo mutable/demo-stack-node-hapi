@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const healthApi = require('../api/health.js');
+const healthApi = require('../api/health');
 
 const healthRoutes = Router();
 

@@ -8,7 +8,7 @@ module.exports = subscribeApi;
 * Get API key from Mutable service configuration
 * which will later be used to authenticate requests
 */
-let apiKey = '';
+let apiKey;
 mutable.config()
   .then((config) => {
     ({ apiKey } = config.api.sendgrid);
@@ -20,13 +20,6 @@ mutable.config()
 */
 subscribeApi.subscribe = (req, h) => {
   const { email } = req.payload;
-  const reg = /\S+@\S+\.\S+/;
-  if (!reg.test(email)) {
-    return h.response({
-      result: 'Invalid email address.',
-      error: true,
-    }).code(400);
-  }
   return fetch('https://api.sendgrid.com/v3/contactdb/recipients', {
     method: 'POST',
     body: JSON.stringify([{ email }]),
@@ -35,14 +28,17 @@ subscribeApi.subscribe = (req, h) => {
       'Content-Type': 'application/json',
     },
   })
-    .then((fetchRes) => {
-      if (fetchRes.status === 201) {
-        return h.response({ result: "Thanks for signing up! We'll keep you up to date." }).code(200);
+    .then((res) => {
+      if (res.status === 201) {
+        return { result: "Thanks for signing up! We'll keep you up to date." };
       }
+      throw new Error(res.statusText);
+    })
+    .catch((err) => {
+      console.error(err);
       return h.response({
         result: 'There was an error subscribing your email, please try again.',
         error: true,
-      }).code(400);
-    })
-    .catch(console.error);
+      }).code(422);
+    });
 };

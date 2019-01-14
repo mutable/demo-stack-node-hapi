@@ -5,6 +5,7 @@ const lessMiddleware = require('less-middleware');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const errorHandler = require('errorhandler');
+
 const initializeRoutes = require('./routes/index.js');
 
 const app = express();

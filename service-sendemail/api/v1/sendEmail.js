@@ -22,10 +22,16 @@ sendEmailApi.subscribe = (req, h) =>
     to: req.payload.email,
     from: 'i@mutable.io',
     subject: 'Thanks for subscribing (Mutable)',
-    text: 'We would like to thank you for subscribing to our newsletter and participating in our live demo visit us at http://www.mutable.io',
-  }, (err) => {
-    if (err) {
-      return h.response({ err, result: 'Problem with sending email' }).code(422);
-    }
-    return h.response({ result: `sent thank you email to ${req.payload.email}` }).code(200);
-  });
+    text: 'We would like to thank you for subscribing to our newsletter and participating in our live demo. Visit us at http://www.mutable.io',
+  })
+    .then((res) => {
+      if (res[0].statusCode === 202) return { result: `Sent thank you email to ${req.payload.email}` };
+      throw new Error(res.statusText);
+    })
+    .catch((err) => {
+      console.error(err);
+      return h.response({
+        result: 'Problem with sending email',
+        err,
+      }).code(422);
+    });

@@ -1,16 +1,18 @@
 {
   "name": "email-sendgrid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sendgrid send thank you email",
   "main": "app.js",
   "dependencies": {
     "@mutable/meta": "^1.3.0",
-    "@sendgrid/mail": "^6.2.1",
-    "hapi": "^17.2.0",
-    "inert": "^5.1.0",
+    "@sendgrid/mail": "^6.3.1",
+    "boom": "^7.3.0",
+    "hapi": "^17.8.1",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1",
     "marked": "^0.3.16",
     "toobusy-js": "^0.5.1",
-    "vision": "^5.3.1"
+    "vision": "^5.4.4"
   },
   "devDependencies": {
     "eslint": "^4.18.1",
@@ -26,6 +28,6 @@
     "microservice"
   ],
   "watch": "api/**/*",
-  "author": "lsqio",
-  "license": "MIT"
+  "author": "mutable",
+  "license": "ISC"
 }

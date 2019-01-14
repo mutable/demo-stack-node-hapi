@@ -1,9 +1,9 @@
 /**
 * Combine all routes into one array
 */
-const homeRoutes = require('./home.routes');
-const healthRoutes = require('./health.routes');
-const subscribeRoutes = require('./subscribe.routes');
+const homeRoutes = require('./home');
+const healthRoutes = require('./health');
+const subscribeRoutes = require('./subscribe');
 
 module.exports = function initializeRoutes(app) {
   app.use('/', homeRoutes);
