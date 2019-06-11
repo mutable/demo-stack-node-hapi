@@ -1,10 +1,14 @@
 const healthApi = require('../api/health');
 
-const healthRoutes = [];
-module.exports = healthRoutes;
+const health = [];
+module.exports = health;
 
-healthRoutes.push({
+health.push({
   method: 'GET',
   path: '/health',
-  handler: healthApi.healthCheck,
+  options :{
+    description: 'Health Check',
+    tags: ['api','mutable','Health'],
+    handler: healthApi.healthCheck
+    }
 });

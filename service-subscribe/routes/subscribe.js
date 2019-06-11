@@ -9,8 +9,10 @@ module.exports = subscribeRoutes;
 subscribeRoutes.push({
   method: 'POST',
   path: '/api/v1/demo/subscribe',
-  handler: subscribeApi.subscribe,
-  config: {
+  options: {
+    description: 'Subscribe endpoint',
+    handler: subscribeApi.subscribe,
+    tags: ['api', 'mutable', 'subscribe'],
     validate: {
       payload: {
         email: Joi.string().email().required(),

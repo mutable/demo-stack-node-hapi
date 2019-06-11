@@ -1,12 +1,23 @@
 /**
 * Combine all routes into one array
 */
-const homeRoutes = require('./home');
-const healthRoutes = require('./health');
-const subscribeRoutes = require('./subscribe');
 
-module.exports = [
-  ...homeRoutes,
-  ...healthRoutes,
-  ...subscribeRoutes,
-];
+const home = require('./home');
+const health = require('./health');
+const subscribe = require('./subscribe');
+
+const _routes = [health, home, subscribe];
+
+const routes = [];
+
+_routes.forEach((_route) => {
+	if (typeof _route === 'object' && _route.length) {
+		_route.forEach((_r) => { 
+			routes.push(_r);
+		})
+	} else if (typeof _route === 'object') {
+		routes.push(_route);
+	}
+});
+
+module.exports = routes;

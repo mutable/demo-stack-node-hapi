@@ -11,7 +11,7 @@ module.exports = subscribeApi;
 let apiKey;
 mutable.config()
   .then((config) => {
-    ({ apiKey } = config.api.sendgrid);
+    // ({ apiKey } = config.api.sendgrid);
   })
   .catch(console.error);
 
@@ -24,7 +24,7 @@ subscribeApi.subscribe = (req, h) => {
     method: 'POST',
     body: JSON.stringify([{ email }]),
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer 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`,
       'Content-Type': 'application/json',
     },
   })
