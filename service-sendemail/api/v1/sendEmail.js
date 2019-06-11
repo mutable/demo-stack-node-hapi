@@ -11,8 +11,7 @@ module.exports = sendEmailApi;
 
 Meta.config()
   .then((config) => {
-    // sendgrid.setApiKey(config.api.sendgrid.apiKey);
-    sendgrid.setApiKey('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');
+    sendgrid.setApiKey(config.api.sendgrid.apiKey);
   })
   .catch(console.error);
 
