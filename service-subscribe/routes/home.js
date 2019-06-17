@@ -5,6 +5,10 @@ module.exports = homeRoutes;
 
 homeRoutes.push({
   method: 'GET',
-  path: '/',
-  handler: homeApi.homePage,
+  path: '/home',
+  options: {
+    description: 'email homepage',
+    tags: ['api', 'mutable', 'subscribe homepage'],
+    handler: homeApi.homePage,
+  }
 });

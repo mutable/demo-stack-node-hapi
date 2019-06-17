@@ -1,27 +1,39 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
+const HapiSwagger = require('hapi-swagger');
 const Inert = require('inert');
 const Vision = require('vision');
 
 const routes = require('./routes');
+const swaggerOptions = require('./utils/swaggerOptions');
 
-const server = new Hapi.Server({
-  port: process.env.PORT || 3000,
-});
+const serverInit = async () => {
+  const server = Hapi.server({
+    port: process.env.PORT || 3000,
+    routes: {
+      cors: {
+        credentials: true,
+      }
+    }
+  });
 
-const init = async () => {
   await server.register([
-    { plugin: Inert },
-    { plugin: Vision },
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions
+    }
   ]);
 
   server.route(routes);
   await server.start();
   console.log('Server running at:', server.info.uri);
-};
+  return server;
+}
 
 process.on('unhandledRejection', (err) => {
   console.error(err);
   process.exit(1);
-});
+})
 
-init();
+serverInit();

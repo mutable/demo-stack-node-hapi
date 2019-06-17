@@ -2,5 +2,5 @@
     "watch": "api/**/*,app.js",
     "isStartedWhen": "port",
     "healthCheck": "/health",
-    "healthCheckType": "none"
+    "healthCheckType": "http"
 }

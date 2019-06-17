@@ -6,5 +6,9 @@ module.exports = healthRoutes;
 healthRoutes.push({
   method: 'GET',
   path: '/health',
-  handler: healthApi.healthCheck,
+  options :{
+    description: 'Health Check',
+    tags: ['api','mutable','Health'],
+    handler: healthApi.healthCheck
+    }
 });
