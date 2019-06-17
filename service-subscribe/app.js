@@ -32,7 +32,7 @@ const serverInit = async () => {
 }
 
 process.on('unhandledRejection', (err) => {
-  console.log(err);
+  console.err(err);
   process.exit(1);
 })
 
