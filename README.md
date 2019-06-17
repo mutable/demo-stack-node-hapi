@@ -1,6 +1,6 @@
 # app-launch-page
 
-This is a boilerplate subscription repo meant to demonstrate microservices.
+This is a boilerplate subscription repo meant to demonstrate microservices without `proxy-service`.
 
 ## Frontend
 `service-www` is the frontend service with an api directly connected to `service-sendmail` and `service-subscribe`
@@ -10,3 +10,12 @@ This is a boilerplate subscription repo meant to demonstrate microservices.
 
 ## Notes
 `Fontend` and `Backend` APIs are hardcoded and this stack example operates without a `proxy-service` which would normally redirect the API requests from the front to the corresponding endpoint in the stack.
+
+
+APIs
+---
+
+### POST: /api/v1/demo/subscribe
+
+### GET: /api/v1/subscribe/thankyou
+
