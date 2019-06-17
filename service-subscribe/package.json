@@ -10,7 +10,7 @@
     "@hapi/hapi": "^18.3.1",
     "@hapi/joi": "^15.0.3",
     "inert": "^5.1.2",
-    "marked": "^0.3.16",
+    "marked": "^0.3.18",
     "node-fetch": "^2.3.0",
     "toobusy-js": "^0.5.1",
     "vision": "^5.4.4",
