@@ -3,10 +3,10 @@ const Boom = require('boom');
 
 const sendEmailApi = require('../api/v1/sendEmail.js');
 
-const email = [];
-module.exports = email;
+const routes = [];
+module.exports = routes;
 
-email.push({
+routes.push({
   method: 'POST',
   path: '/api/v1/subscribe/thankyou',
   options: {
