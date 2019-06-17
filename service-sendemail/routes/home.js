@@ -1,9 +1,9 @@
 const homeApi = require('../api/home.js');
 
-const home = [];
-module.exports = home;
+const routes = [];
+module.exports = routes;
 
-home.push({
+routes.push({
   method: 'GET',
   path: '/home',
   options: {
