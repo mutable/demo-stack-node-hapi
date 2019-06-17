@@ -1,9 +1,12 @@
 Demo Supscribtion stack
 ===
 
-This is a boilerplate subscription stack meant to demonstrate microservices without `proxy-service` and the subscription to our newsletter.
+This is a subscription app stack meant to demonstrate microservices without `proxy-service` and the subscription to our newsletter.
 
-## Usage
+## Overview
+
+Backend services are built using `Hapi`, `Joi`, `Swagger` and `SendGrid` for subscription, and confirmation email.
+
 Install all the dependencies by navigating into each service and running the `npm install` command.
 
 Run the services through the Mutable app or via Terminal.
@@ -27,3 +30,10 @@ APIs
 
 ### GET: /api/v1/subscribe/thankyou
 
+External Links
+---
+
+- [**Hapi**](https://hapijs.com/)
+- [**Joi**](https://hapijs.com/tutorials/validation#joi)
+- [**Swagger**](https://github.com/glennjones/hapi-swagger)
+- [**SendGrid**](https://sendgrid.com/)
