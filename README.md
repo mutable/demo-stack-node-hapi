@@ -11,7 +11,7 @@ Install all the dependencies by navigating into each service and running the `np
 
 Run the services through the Mutable app or via Terminal.
 
-In the browser naviaget to the port that listens to service-www. `localhost:${port}`
+In the browser navigate to the port that is assigned to service-www. ex:`http://localhost:1234`
 
 ## Frontend
 `service-www` is the frontend service with an api directly connected to `service-sendmail` and `service-subscribe`
