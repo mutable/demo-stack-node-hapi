@@ -1,6 +1,14 @@
-# app-launch-page
+Demo Supscribtion stack
+===
 
-This is a boilerplate subscription repo meant to demonstrate microservices without `proxy-service`.
+This is a boilerplate subscription stack meant to demonstrate microservices without `proxy-service` and the subscription to our newsletter.
+
+## Usage
+Install all the dependencies by navigating into each service and running the `npm install` command.
+
+Run the services through the Mutable app or via Terminal.
+
+In the browser naviaget to the port that listens to service-www. `localhost:${port}`
 
 ## Frontend
 `service-www` is the frontend service with an api directly connected to `service-sendmail` and `service-subscribe`
