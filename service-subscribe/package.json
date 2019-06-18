@@ -5,16 +5,13 @@
   "main": "app.js",
   "dependencies": {
     "@mutable/meta": "^1.3.0",
-    "@sendgrid/mail": "^6.3.1",
-    "@hapi/boom": "^7.4.2",
     "@hapi/hapi": "^18.3.1",
+    "hapi-swagger": "^10.0.1",
+    "@hapi/vision": "^5.5.2",
+    "@hapi/inert": "^5.2.0",
     "@hapi/joi": "^15.0.3",
-    "inert": "^5.1.2",
-    "marked": "^0.3.16",
-    "node-fetch": "^2.3.0",
-    "toobusy-js": "^0.5.1",
-    "vision": "^5.4.4",
-    "hapi-swagger": "^10.0.1"
+    "@hapi/boom": "^7.4.2",
+    "toobusy-js": "^0.5.1"
   },
   "devDependencies": {
     "eslint": "^4.18.1",
