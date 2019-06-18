@@ -29,7 +29,7 @@
     "node",
     "microservice"
   ],
-  "watch": "api/v1/*",
+  "watch": "api/*",
   "author": "mutable",
   "license": "MIT"
 }

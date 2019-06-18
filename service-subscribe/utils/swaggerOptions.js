@@ -1,3 +1,4 @@
+
 /**
 * DEMO FILE
 *
@@ -14,8 +15,8 @@ const swaggetOptions = {
     Bearer: {
       type: 'apiKey',
       name: 'Authorization',
-      in: 'header',
-    },
+      in: 'header'
+    }
   },
   security: [{ Bearer: [] }],
   info: {

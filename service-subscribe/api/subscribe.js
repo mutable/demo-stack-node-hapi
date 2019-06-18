@@ -1,15 +1,17 @@
-const mutable = require('@mutable/meta');
+const Meta = require('@mutable/meta');
 const fetch = require('node-fetch');
 
-const subscribeApi = {};
-module.exports = subscribeApi;
+const SUBSCRIBE_API = {};
+module.exports = SUBSCRIBE_API;
 
 /**
 * Get API key from Mutable service configuration
 * which will later be used to authenticate requests
-*/
+**/
+
+// CHANGE THIS!!!!
 let apiKey;
-mutable.config()
+Meta.config()
   .then((config) => {
     ({ apiKey } = config.api.sendgrid);
   })
@@ -17,8 +19,8 @@ mutable.config()
 
 /**
 * Receive email address, validate it and subscribe to mailing list
-*/
-subscribeApi.subscribe = (req, h) => {
+**/
+SUBSCRIBE_API.subscribe = (req, h) => {
   const { email } = req.payload;
   return fetch('https://api.sendgrid.com/v3/contactdb/recipients', {
     method: 'POST',

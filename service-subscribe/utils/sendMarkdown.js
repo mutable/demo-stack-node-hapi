@@ -1,6 +1,8 @@
+
 /**
 * Build homepage markdown
 */
+
 const path = require('path');
 const fs = require('fs');
 const marked = require('marked');

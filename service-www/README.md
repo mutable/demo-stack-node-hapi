@@ -14,7 +14,7 @@ APIs
 
 Give back the home page
 
-### POST: /api/v1/subscribe
+### POST: /api/subscribe
 
 Payload:
 ```json

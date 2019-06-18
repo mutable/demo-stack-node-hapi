@@ -1,14 +1,14 @@
-const homeApi = require('../api/home.js');
+const HOME_API = require('../api/home.js');
 
-const homeRoutes = [];
-module.exports = homeRoutes;
+const routes = [];
+module.exports = routes;
 
-homeRoutes.push({
+routes.push({
   method: 'GET',
   path: '/home',
   options: {
     description: 'email homepage',
     tags: ['api', 'mutable', 'subscribe homepage'],
-    handler: homeApi.homePage,
+    handler: HOME_API.homePage,
   }
 });

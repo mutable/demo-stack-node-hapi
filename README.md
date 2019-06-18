@@ -26,9 +26,9 @@ In the browser navigate to the port that is assigned to service-www. ex:`http://
 APIs
 ---
 
-### POST: /api/v1/demo/subscribe
+### POST: /api/demo/subscribe
 
-### GET: /api/v1/subscribe/thankyou
+### GET: /api/subscribe/thankyou
 
 External Links
 ---

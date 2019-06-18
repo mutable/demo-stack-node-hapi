@@ -1,12 +1,14 @@
+
 /**
 * Combine all routes into one array
-*/
+**/
 
 const home = require('./home');
 const health = require('./health');
 const subscribe = require('./subscribe');
+const api = require('./api');
 
-const _routes = [health, home, subscribe];
+const _routes = [health, home, subscribe, api];
 
 const routes = [];
 

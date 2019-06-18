@@ -1,18 +1,18 @@
 const Joi = require('joi');
 const Boom = require('boom');
 
-const sendEmailApi = require('../api/v1/sendEmail.js');
+const EMAIL_API = require('../api/sendEmail.js');
 
 const routes = [];
 module.exports = routes;
 
 routes.push({
   method: 'POST',
-  path: '/api/v1/subscribe/thankyou',
+  path: '/api/subscribe/thankyou',
   options: {
     description: 'Than you for subscribing',
     tags: ['api', 'mutable', 'email'],
-    handler: sendEmailApi.subscribe,
+    handler: EMAIL_API.subscribe,
     validate: {
       payload: {
         email: Joi.string().email().required(),

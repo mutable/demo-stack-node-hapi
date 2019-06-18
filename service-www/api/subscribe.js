@@ -11,7 +11,7 @@ subscribeApi.subscribe = (req, res) => {
   mutable.service('service-subscribe')
     .then(service => ({
       method: 'POST',
-      uri: `http://${service}/api/v1/demo/subscribe`,
+      uri: `http://${service}/api/demo/subscribe`,
       json: req.body,
     }))
     .then(rp)
@@ -25,7 +25,7 @@ subscribeApi.successEmail = (req, res) => {
   mutable.service('service-sendemail')
     .then(service => ({
       method: 'POST',
-      uri: `http://${service}/api/v1/subscribe/thankyou`,
+      uri: `http://${service}/api/subscribe/thankyou`,
       json: req.body,
     }))
     .then(rp)

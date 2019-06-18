@@ -1,14 +1,15 @@
-const sendgrid = require('@sendgrid/mail');
 const Meta = require('@mutable/meta');
+const sendgrid = require('@sendgrid/mail');
 
-const sendEmailApi = {};
-module.exports = sendEmailApi;
+const EMAIL_API = {};
+module.exports =EMAIL_API;
 
 /**
 * Get API key from Mutable service configuration
 * and pass it to Sendgrid for authentication
-*/
+**/
 
+// CHANGE THIS!!!!
 Meta.config()
   .then((config) => {
     sendgrid.setApiKey(config.api.sendgrid.apiKey);
@@ -17,8 +18,7 @@ Meta.config()
 
 /**
 * Send thank you email to subscriber using Sendgrid
-*/
-sendEmailApi.subscribe = (req, h) =>
+**/EMAIL_API.subscribe = (req, h) =>
   sendgrid.send({
     to: req.payload.email,
     from: 'i@mutable.io',
