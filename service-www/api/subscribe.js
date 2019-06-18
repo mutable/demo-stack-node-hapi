@@ -12,7 +12,7 @@ subscribeApi.subscribe = (req, res) => {
     .then(service => ({
       method: 'POST',
       uri: `http://${service}/api/demo/subscribe`,
-      json: req.body,
+      json: req.body
     }))
     .then(rp)
     .then(body => res.send(body))
@@ -26,7 +26,7 @@ subscribeApi.successEmail = (req, res) => {
     .then(service => ({
       method: 'POST',
       uri: `http://${service}/api/subscribe/thankyou`,
-      json: req.body,
+      json: req.body
     }))
     .then(rp)
     .then(body => res.send(body))

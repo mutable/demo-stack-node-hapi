@@ -7,6 +7,6 @@ module.exports = homeApi;
 
 homeApi.homePage = (req, res) => {
   res.render('index', {
-    title: 'Home',
+    title: 'Home'
   });
 };

@@ -9,6 +9,6 @@ routes.push({
   options: {
     description: 'email homepage',
     tags: ['api', 'mutable', 'email homepage'],
-    handler: HOME_API.homePage,
+    handler: HOME_API.homePage
   }
 });

@@ -5,7 +5,7 @@
 * Dummy API route
 **/
 
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 
 const API = require('../api/index');
 const LIST_DEFAULT = require('../utils/joiModels');
@@ -29,6 +29,6 @@ routes.push({
     },
     response: {
       failAction: FAIL_ACTION
-    },
-  },
+    }
+  }
 });

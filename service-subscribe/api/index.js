@@ -17,5 +17,5 @@ API.get = (req) => {
     limit ? limit : 0
   ];
   console.log(parameters)
-  return  Object.assign({}, {'parameters': parameters, 'message': 'you made a request'})
+  return  Object.assign({}, {'parameters': parameters, 'message': 'you made a request'});
 }

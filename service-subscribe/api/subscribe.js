@@ -27,8 +27,8 @@ SUBSCRIBE_API.subscribe = (req, h) => {
     body: JSON.stringify([{ email }]),
     headers: {
       Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
+      'Content-Type': 'application/json'
+    }
   })
     .then((res) => {
       if (res.status === 201) {
@@ -40,7 +40,7 @@ SUBSCRIBE_API.subscribe = (req, h) => {
       console.error(err);
       return h.response({
         result: 'There was an error subscribing your email, please try again.',
-        error: true,
+        error: true
       }).code(422);
     });
 };

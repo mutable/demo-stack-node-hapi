@@ -1,7 +1,7 @@
-const Joi = require('joi');
-const Boom = require('boom');
+const Joi = require('@hapi/joi');
+const Boom = require('@hapi/boom');
 
-const SUBSCRIBE_API = require('../api/subscribe.js/index.js');
+const SUBSCRIBE_API = require('../api/subscribe.js');
 
 const routes = [];
 module.exports = routes;
@@ -16,9 +16,9 @@ routes.push({
     validate: {
       payload: {
         email: Joi.string().email().required(),
-        source: Joi.string().required(),
+        source: Joi.string().required()
       },
-      failAction: async (request, h, err) => Boom.badRequest(err.details[0].message),
+      failAction: async (request, h, err) => Boom.badRequest(err.details[0].message)
     }
   }
 });
