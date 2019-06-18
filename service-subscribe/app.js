@@ -6,12 +6,12 @@ const Vision = require('vision');
 const routes = require('./routes');
 const swaggerOptions = require('./utils/swaggerOptions');
 
-const serverInit = async () => {
-  const server = Hapi.server({
+(async () => {
+  const server = await new Hapi.Server({
     port: process.env.PORT || 3000,
     routes: {
       cors: {
-        credentials: true,
+        origin: ['*']
       }
     }
   });
@@ -25,15 +25,17 @@ const serverInit = async () => {
     }
   ]);
 
-  server.route(routes);
-  await server.start();
-  console.log('Server running at:', server.info.uri);
-  return server;
-}
+  try {
+    server.route(routes);
+    await server.start();
+    console.log(`Server running at: ${server.info.uri}`);
+  } catch (err) {
+    console.error(err);
+  }
+})();
 
 process.on('unhandledRejection', (err) => {
   console.error(err);
   process.exit(1);
-})
+});
 
-serverInit();

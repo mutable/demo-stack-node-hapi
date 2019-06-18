@@ -3,7 +3,7 @@
 */
 const tooBusy = require('toobusy-js');
 
-const healthApi = {};
-module.exports = healthApi;
+const API = {};
+module.exports = API;
 
-healthApi.healthCheck = () => tooBusy.lag().toString();
+API.healthCheck = () => tooBusy.lag().toString();

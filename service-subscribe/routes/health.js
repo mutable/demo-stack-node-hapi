@@ -1,4 +1,9 @@
-const healthApi = require('../api/health');
+
+/**
+* Health status check endpoint
+**/
+
+const HEALTH_API = require('../api/health');
 
 const healthRoutes = [];
 module.exports = healthRoutes;
@@ -9,6 +14,6 @@ healthRoutes.push({
   options :{
     description: 'Health Check',
     tags: ['api','mutable','Health'],
-    handler: healthApi.healthCheck
+    handler: HEALTH_API.healthCheck
     }
 });

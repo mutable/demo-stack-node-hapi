@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const Boom = require('boom');
 
-const subscribeApi = require('../api/v1/subscribe.js');
+const subscribeApi = require('../api/subscribe.js/index.js');
 
 const subscribeRoutes = [];
 module.exports = subscribeRoutes;
