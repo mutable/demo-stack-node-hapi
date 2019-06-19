@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const homeApi = require('../api/home');
+const API_HOME = require('../api/home');
 
 const routes = Router();
 
-routes.get('/', homeApi.homePage);
-
 module.exports = routes;
+
+routes.get('/', API_HOME.homePage);

@@ -1,3 +1,10 @@
+
+/**
+* DEMO FILE
+* 
+* Getting Configs set in Mutable App
+**/
+
 const Meta = require('@mutable/meta');
 
 const ENV = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';

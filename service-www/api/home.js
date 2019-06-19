@@ -1,11 +1,13 @@
+
 /**
-* Render homepage template
-*/
-const homeApi = {};
+* Render the homepage template
+**/
 
-module.exports = homeApi;
+const API = {};
 
-homeApi.homePage = (req, res) => {
+module.exports = API;
+
+API.homePage = (req, res) => {
   res.render('index', {
     title: 'Home'
   });

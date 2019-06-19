@@ -1,12 +1,14 @@
+
 /**
 * Monitor service health
-*/
+**/
+
 const tooBusy = require('toobusy-js');
 
-const healthApi = {};
+const API = {};
 
 module.exports = healthApi;
 
-healthApi.healthCheck = (req, res) => {
+API.healthCheck = (req, res) => {
   res.send(tooBusy.lag().toString());
 };

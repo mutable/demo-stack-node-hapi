@@ -1,9 +1,10 @@
 const { Router } = require('express');
-const subscribeApi = require('../api/subscribe');
+const API_SUBSCRIBE = require('../api/subscribe');
 
 const routes = Router();
 
-routes.post('/', subscribeApi.subscribe);
-routes.post('/success', subscribeApi.successEmail);
-
 module.exports = routes;
+
+routes.post('/', API_SUBSCRIBE.subscribe);
+routes.post('/success', API_SUBSCRIBE.successEmail);
+
