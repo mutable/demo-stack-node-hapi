@@ -8,7 +8,7 @@
 const Boom = require('@hapi/boom');
 
 const API = require('../api/index');
-const LIST_DEFAULT = require('../utils/joiModels');
+const Joi_Models = require('../utils/joiModels');
 
 const routes = [];
 module.exports = routes;
@@ -25,7 +25,7 @@ routes.push({
     tags: ['api'],
     handler: API.get,
     validate: {
-      query: Object.assign({}, LIST_DEFAULT)
+      query: Object.assign({}, Joi_Models.LIST_DEFAULT)
     },
     response: {
       failAction: FAIL_ACTION
