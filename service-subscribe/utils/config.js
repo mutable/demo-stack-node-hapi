@@ -17,7 +17,6 @@ module.exports = Config;
 //** Meta.config() returns configurations set in the Mutable app's Configurations tab **//
 
 setConfigs = (mutableConfigs) => {
-  
   Config.content = mutableConfigs;
 }
 

@@ -1,6 +1,8 @@
+
 /**
 * Combine all routes into one array
-*/
+**/
+
 const home = require('./home');
 const health = require('./health');
 const subscribe = require('./subscribe');

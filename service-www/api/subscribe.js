@@ -1,14 +1,14 @@
-const mutable = require('@mutable/meta');
+const Meta = require('@mutable/meta');
 const rp = require('request-promise');
 
-const subscribeApi = {};
+const API = {};
 
-module.exports = subscribeApi;
+module.exports = API;
 /**
 * Send subscription request to 'service-subscribe'
-*/
-subscribeApi.subscribe = (req, res) => {
-  mutable.service('service-subscribe')
+**/
+API.subscribe = (req, res) => {
+  Meta.service('service-subscribe')
     .then(service => ({
       method: 'POST',
       uri: `http://${service}/api/demo/subscribe`,
@@ -20,9 +20,9 @@ subscribeApi.subscribe = (req, res) => {
 };
 /**
 * Send subscription email-confirmation request to 'service-sendemail'
-*/
-subscribeApi.successEmail = (req, res) => {
-  mutable.service('service-sendemail')
+**/
+API.successEmail = (req, res) => {
+  Meta.service('service-sendemail')
     .then(service => ({
       method: 'POST',
       uri: `http://${service}/api/subscribe/thankyou`,
