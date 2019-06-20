@@ -1,4 +1,4 @@
-const Meta = require('@mutable/meta');
+const Config = require('../utils/config');
 const fetch = require('node-fetch');
 
 const SUBSCRIBE_API = {};
@@ -9,18 +9,14 @@ module.exports = SUBSCRIBE_API;
 * which will later be used to authenticate requests
 **/
 
-// CHANGE THIS!!!!
-let apiKey;
-Meta.config()
-  .then((config) => {
-    ({ apiKey } = config.api.sendgrid);
-  })
-  .catch(console.error);
+let apiKey = '';
 
 /**
 * Receive email address, validate it and subscribe to mailing list
 **/
+
 SUBSCRIBE_API.subscribe = (req, h) => {
+  apiKey = Config.content.sendGrid.apiKey;
   const { email } = req.payload;
   return fetch('https://api.sendgrid.com/v3/contactdb/recipients', {
     method: 'POST',

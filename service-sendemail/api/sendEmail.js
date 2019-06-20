@@ -9,13 +9,6 @@ module.exports =EMAIL_API;
 * and pass it to Sendgrid for authentication
 **/
 
-// CHANGE THIS!!!!
-Meta.config()
-  .then((config) => {
-    sendgrid.setApiKey(config.api.sendgrid.apiKey);
-  })
-  .catch(console.error);
-
 /**
 * Send thank you email to subscriber using Sendgrid
 **/

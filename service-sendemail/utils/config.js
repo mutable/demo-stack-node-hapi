@@ -6,19 +6,25 @@
 **/
 
 const Meta = require('@mutable/meta');
+const sendgrid = require('@sendgrid/mail');
 
 const ENV = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
 
-const Config = {};
+const Config = {
+  content: {}
+};
 module.exports = Config;
-
-let config = {};
 
 //** Meta.config() returns configurations set in the Mutable app's Configurations tab **//
 
-Meta.config()
-.then((_config) => {
-  config = _config;
-  return _config;
-})
+setConfigs = (mutableConfigs) => {
+  //** Setting Sendgrid API key from the Mutable Configs**/
+  sendgrid.setApiKey(mutableConfigs.sendGrid.apiKey)
+  Config.content = mutableConfigs;
+}
+
+Config.init = Meta.config()
+.then(setConfigs)
 .catch((e) => {throw e});
+
+Meta.on('configChange', setConfigs);

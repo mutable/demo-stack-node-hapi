@@ -3,10 +3,17 @@ const HapiSwagger = require('hapi-swagger');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 
+const Config = require('./utils/config');
 const routes = require('./routes');
 const swaggerOptions = require('./utils/swaggerOptions.js');
 
+const setMutableConfig = () => {
+  Config.init;
+}
+
 (async () => {
+  setMutableConfig();
+
   const server = await new Hapi.Server({
     port: process.env.PORT || 3000,
     routes: {
