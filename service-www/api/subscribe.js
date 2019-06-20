@@ -11,7 +11,7 @@ API.subscribe = (req, res) => {
   Meta.service('service-subscribe')
     .then(service => ({
       method: 'POST',
-      uri: `http://${service}/api/demo/subscribe`,
+      uri: `http://${service}/api/subscribe`,
       json: req.body
     }))
     .then(rp)

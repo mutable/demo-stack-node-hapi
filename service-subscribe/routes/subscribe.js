@@ -8,7 +8,7 @@ module.exports = routes;
 
 routes.push({
   method: 'POST',
-  path: '/api/demo/subscribe',
+  path: '/api/subscribe',
   options: {
     description: 'Subscribe endpoint',
     tags: ['api', 'mutable', 'subscribe'],
