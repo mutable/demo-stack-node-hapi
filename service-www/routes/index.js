@@ -1,6 +1,6 @@
 
 /**
-* Combine all routes into one array
+* Combine all routes
 **/
 
 const home = require('./home');

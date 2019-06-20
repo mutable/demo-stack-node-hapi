@@ -1,6 +1,6 @@
 
 /**
-* Render homepage template
+* Render the homepage template
 **/
 
 const API = {};
