@@ -3,6 +3,6 @@ const API_HOME = require('../api/home');
 
 const routes = Router();
 
-routes.get('/', API_HOME.homePage);
-
 module.exports = routes;
+
+routes.get('/', API_HOME.homePage);

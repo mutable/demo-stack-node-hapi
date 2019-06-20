@@ -1,6 +1,8 @@
+
 /**
 * Render homepage template
-*/
+**/
+
 const API = {};
 
 module.exports = API;
