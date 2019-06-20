@@ -5,7 +5,7 @@
 
 const sendMarkdown = require('../utils/sendMarkdown');
 
-const HOME_API = {};
-module.exports = HOME_API;
+const API = {};
+module.exports = API;
 
-HOME_API.homePage = () => sendMarkdown();
+API.homePage = () => sendMarkdown();
