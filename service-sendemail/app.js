@@ -5,7 +5,7 @@ const Vision = require('@hapi/vision');
 
 const Config = require('./utils/config');
 const Routes = require('./routes');
-const swaggerOptions = require('./utils/swaggerOptions.js');
+const SwaggerOptions = require('./utils/swaggerOptions.js');
 
 const setMutableConfig = () => {
   Config.init;
