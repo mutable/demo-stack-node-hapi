@@ -4,8 +4,8 @@ const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 
 const Config = require('./utils/config');
-const routes = require('./routes');
-const swaggerOptions = require('./utils/swaggerOptions.js');
+const Routes = require('./routes');
+const SwaggerOptions = require('./utils/swaggerOptions.js');
 
 const setMutableConfig = () => {
   Config.init;
@@ -28,12 +28,12 @@ const setMutableConfig = () => {
     Vision,
     {
       plugin: HapiSwagger,
-      options: swaggerOptions
+      options: SwaggerOptions
     }
   ]);
 
   try {
-    server.route(routes);
+    server.route(Routes);
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
   } catch (err) {

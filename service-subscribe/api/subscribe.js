@@ -1,8 +1,8 @@
 const Config = require('../utils/config');
 const fetch = require('node-fetch');
 
-const API = {};
-module.exports = API;
+const ApiSubscribe = {};
+module.exports = ApiSubscribe;
 
 /**
 * Get API key from Mutable service configuration
@@ -15,7 +15,7 @@ let apiKey = '';
 * Receive email address, validate it and subscribe to mailing list
 **/
 
-API.subscribe = (req, h) => {
+ApiSubscribe.subscribe = (req, h) => {
   apiKey = Config.content.sendGrid.apiKey;
   const { email } = req.payload;
   return fetch('https://api.sendgrid.com/v3/contactdb/recipients', {

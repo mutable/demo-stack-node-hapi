@@ -1,7 +1,7 @@
 const Joi = require('@hapi/joi');
 const Boom = require('@hapi/boom');
 
-const SUBSCRIBE_API = require('../api/subscribe.js');
+const ApiSubscribe = require('../api/subscribe.js');
 
 const routes = [];
 module.exports = routes;
@@ -12,7 +12,7 @@ routes.push({
   options: {
     description: 'Subscribe endpoint',
     tags: ['api', 'mutable', 'subscribe'],
-    handler: SUBSCRIBE_API.subscribe,
+    handler: ApiSubscribe.subscribe,
     validate: {
       payload: {
         email: Joi.string().email().required(),

@@ -1,4 +1,4 @@
-const HOME_API = require('../api/home.js');
+const ApiHome = require('../api/home.js');
 
 const routes = [];
 module.exports = routes;
@@ -9,6 +9,6 @@ routes.push({
   options: {
     description: 'email homepage',
     tags: ['api', 'mutable', 'email homepage'],
-    handler: HOME_API.homePage
+    handler: ApiHome.homePage
   }
 });
