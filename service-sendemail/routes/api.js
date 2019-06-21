@@ -8,7 +8,7 @@
 const Boom = require('@hapi/boom');
 
 const API = require('../api/index');
-const Joi_Models = require('../utils/joiModels');
+const JoiModels = require('../utils/joi-models');
 
 const routes = [];
 module.exports = routes;
