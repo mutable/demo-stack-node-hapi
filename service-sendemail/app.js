@@ -4,7 +4,7 @@ const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 
 const Config = require('./utils/config');
-const routes = require('./routes');
+const Routes = require('./routes');
 const swaggerOptions = require('./utils/swaggerOptions.js');
 
 const setMutableConfig = () => {
