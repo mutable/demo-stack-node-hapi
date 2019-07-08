@@ -58,10 +58,8 @@ Go to the config tab and set it with this info
 
 ```json
 {
-  "api": {
-    "sendgrid": {
-       "apiKey": "xxx" // Sendgrid API key
-     }
+  "sendGrid": {
+      "apiKey": "xxx" // Sendgrid API key
   }
 }
 ```

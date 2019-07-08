@@ -33,7 +33,7 @@ block content
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
           document.getElementById("response").innerHTML = responseString;
           if (!emailSent) {
-            xmlhttp.open("POST", "/api/v1/subscribe/success", true);
+            xmlhttp.open("POST", "/api/subscribe/success", true);
             xmlhttp.setRequestHeader("Content-type","application/json");
             xmlhttp.send(JSON.stringify({email}));
             emailSent = true;
@@ -49,7 +49,7 @@ block content
         source: "techstars"
       }
 
-      xmlhttp.open("POST", "/api/v1/subscribe", true);
+      xmlhttp.open("POST", "/api/subscribe", true);
       xmlhttp.setRequestHeader("Content-type","application/json");
       xmlhttp.send(JSON.stringify(payload));
     }

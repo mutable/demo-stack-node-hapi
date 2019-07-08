@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const healthApi = require('../api/health');
+const ApiHealth = require('../api/health');
 
-const healthRoutes = Router();
+const routes = Router();
 
-healthRoutes.get('/', healthApi.healthCheck);
+module.exports = routes;
 
-module.exports = healthRoutes;
+routes.get('/', ApiHealth.healthCheck);

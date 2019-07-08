@@ -1,9 +1,11 @@
+
 /**
 * Receive markdown and render it on homepage
 */
+
 const sendMarkdown = require('../utils/sendMarkdown');
 
-const homeApi = {};
-module.exports = homeApi;
+const ApiHome = {};
+module.exports = ApiHome;
 
-homeApi.homePage = () => sendMarkdown();
+ApiHome.homePage = () => sendMarkdown();

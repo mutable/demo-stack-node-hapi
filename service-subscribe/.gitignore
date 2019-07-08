@@ -28,3 +28,10 @@ node_modules
 
 .DS_Store
 .monitor
+
+##MUTABLE-local
+.pins.json
+.config.json
+.consul
+.vscode
+.vscode/*

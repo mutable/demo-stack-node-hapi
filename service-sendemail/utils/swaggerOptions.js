@@ -1,12 +1,29 @@
-const PACKAGE = require('../package.json');
 
-const swaggetOptions = {
+/**
+* DEMO FILE
+*
+* Swagger options configuration
+**/
+
+const Package = require('../package.json');
+
+const SwaggerOptions = {
   documentationPath: '/',
+  auth: false,
+  schemes: ['http', 'https'],
+  securityDefinitions: {
+    Bearer: {
+      type: 'apiKey',
+      name: 'Authorization',
+      in: 'header'
+    }
+  },
+  security: [{ Bearer: [] }],
   info: {
-    title: PACKAGE.name,
-    description: PACKAGE.description,
-    version: PACKAGE.version
+    title: Package.name,
+    description: Package.description,
+    version: Package.version
   }
-}
+};
 
-module.exports = swaggetOptions;
+module.exports = SwaggerOptions;

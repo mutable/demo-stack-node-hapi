@@ -1,24 +1,24 @@
-const Joi = require('joi');
-const Boom = require('boom');
+const Joi = require('@hapi/joi');
+const Boom = require('@hapi/boom');
 
-const subscribeApi = require('../api/v1/subscribe.js');
+const ApiSubscribe = require('../api/subscribe.js');
 
-const subscribeRoutes = [];
-module.exports = subscribeRoutes;
+const routes = [];
+module.exports = routes;
 
-subscribeRoutes.push({
+routes.push({
   method: 'POST',
-  path: '/api/v1/demo/subscribe',
+  path: '/api/subscribe',
   options: {
     description: 'Subscribe endpoint',
-    handler: subscribeApi.subscribe,
     tags: ['api', 'mutable', 'subscribe'],
+    handler: ApiSubscribe.subscribe,
     validate: {
       payload: {
         email: Joi.string().email().required(),
-        source: Joi.string().required(),
+        source: Joi.string().required()
       },
-      failAction: async (request, h, err) => Boom.badRequest(err.details[0].message),
-    },
-  },
+      failAction: async (request, h, err) => Boom.badRequest(err.details[0].message)
+    }
+  }
 });

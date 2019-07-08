@@ -1,32 +1,30 @@
-const mutable = require('@mutable/meta');
+const Config = require('../utils/config');
 const fetch = require('node-fetch');
 
-const subscribeApi = {};
-module.exports = subscribeApi;
+const ApiSubscribe = {};
+module.exports = ApiSubscribe;
 
 /**
 * Get API key from Mutable service configuration
 * which will later be used to authenticate requests
-*/
-let apiKey;
-mutable.config()
-  .then((config) => {
-    ({ apiKey } = config.api.sendgrid);
-  })
-  .catch(console.error);
+**/
+
+let apiKey = '';
 
 /**
 * Receive email address, validate it and subscribe to mailing list
-*/
-subscribeApi.subscribe = (req, h) => {
+**/
+
+ApiSubscribe.subscribe = (req, h) => {
+  apiKey = Config.content.sendGrid.apiKey;
   const { email } = req.payload;
   return fetch('https://api.sendgrid.com/v3/contactdb/recipients', {
     method: 'POST',
     body: JSON.stringify([{ email }]),
     headers: {
       Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
+      'Content-Type': 'application/json'
+    }
   })
     .then((res) => {
       if (res.status === 201) {
@@ -38,7 +36,7 @@ subscribeApi.subscribe = (req, h) => {
       console.error(err);
       return h.response({
         result: 'There was an error subscribing your email, please try again.',
-        error: true,
+        error: true
       }).code(422);
     });
 };

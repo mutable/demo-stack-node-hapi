@@ -5,6 +5,13 @@ This is a subscription app stack meant to demonstrate microservices without `pro
 
 ## Overview
 
+This stack uses our prepared boilerplate services available in Mutable's public repos.
+
+service-subscribe: [Repo](https://github.com/mutable/boilerplate-service-node-hapi)  
+service-sendmail: [Repo](https://github.com/mutable/boilerplate-service-node-hapi)  
+service-www service: [Repo](https://github.com/mutable/boilerplate-node-micro-express)  
+
+
 Backend services are built using `Hapi`, `Joi`, `Swagger` and `SendGrid` for subscription, and confirmation email.
 
 Install all the dependencies by navigating into each service and running the `npm install` command.
@@ -26,9 +33,9 @@ In the browser navigate to the port that is assigned to service-www. ex:`http://
 APIs
 ---
 
-### POST: /api/v1/demo/subscribe
+### POST: /api/subscribe
 
-### GET: /api/v1/subscribe/thankyou
+### GET: /api/subscribe/thankyou
 
 External Links
 ---
