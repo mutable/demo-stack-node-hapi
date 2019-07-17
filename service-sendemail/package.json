@@ -1,6 +1,6 @@
 {
   "name": "email-sendgrid",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "sendgrid send thank you email",
   "main": "app.js",
   "dependencies": {
