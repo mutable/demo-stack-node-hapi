@@ -1,6 +1,6 @@
 {
   "name": "subscribe-mailchimp",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "subscribe a email and info to mailchimp",
   "main": "app.js",
   "dependencies": {
